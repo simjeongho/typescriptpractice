@@ -43,8 +43,44 @@
         }
     }
     
+    class User
+    {
+       private firstName : string;
+       private lastName: string;
+       private internalAge = 4;
+       get age(): number
+       {
+           return this.internalAge;
+       }//getter
+       set age(num:number)
+       {
+           if(num < 0)
+           {
+               this.internalAge = num;
+           }
+           this.internalAge = num;
+       }//setter
+        get fullName(): string{
+            return this.firstName + this.lastName;
+        }
+
+        constructor(firstName : string , lastName : string)
+        {
+            this.firstName = firstName;
+            this.lastName = lastName;
+        }
+
+
+    }
     const maker = new coffeeMaker(32);
     maker.fillCoffeeBeans(32);
     //maker.coffeeBeans = 3;
     //maker.coffeeBeans = -34; // invalid
+
+    const user = new User('steve' , 'jobs');
+    console.log(user.fullName);
+    //user.firstName = 'jeongho' // private이라 바로 접근 불가능
+    console.log(user.fullName);
+    user.age = 6;
+    
 }
