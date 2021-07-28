@@ -7,8 +7,8 @@ function move2(direction: Direction)
 {
     console.log(direction);
 }
-    move('down');
-    move('right');
+    move2('down');
+    move2('right');
 
     type TileSize = 8|16|32;
     const tile : TileSize = 16;
