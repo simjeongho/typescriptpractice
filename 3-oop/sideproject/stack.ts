@@ -68,6 +68,7 @@
     sck.pop();
     sck.push('박');
     sck.pop();
+    sck.pop();
     console.log(sck);
 
     
