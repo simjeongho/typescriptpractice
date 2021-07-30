@@ -45,4 +45,17 @@
 
     const jeonghoafterPay = payBad(jeongho); // Employee를 리턴하기 때문에 interface에 존재 하지 않는 workFullTime함수는 사라지게 된다. 
     const minyeongafterpay = payBad(minyeong);// 세부 클래스의 정보를 잃어버리게 된다. as 키워드를 사용하면 가능하긴 하나 권장하지 않는다. 
+
+
+    const obj = {
+        name : 'jeongho',
+        age : '25',
+    }
+
+    function getValue<O , K extends keyof O>(obj : O , key : K) : O[K]
+    {
+        return obj[key];
+    }
+
+    console.log(getValue(obj , 'name'));
 }
